@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}
+fedresurs app
+{% endblock %}
+
+{% block head %}
+<p>
+    <a id="form-request-tab">Сформировать запрос</a>
+    <a id="submit-request-tab">Исполнить запрос</a>
+</p>
+<h2>Поиск в fedresurs.ru</h2>
+{% endblock %}
+
+
+{% block content %}
+<h3>Укажите критерии поиска:</h3>
+<div id="form-request" style="display: block">
+    <form>
+    <label>Дата начала периода
+        <input id="begin-input" type="date" required>
+    </label>
+    <label>Дата окончания периода
+        <input id="end-input" type="date">
+    </label>
+    <br>
+    <label>Тип участника сообщения
+        <select id="participant-type-input">
+            <option value="Company">Компания</option>
+            <option value="IndividualEntrepreneur">Индивидуальный предприниматель</option>
+            <option value="Person">Физическое лицо</option>
+            <option value="NonResidentCompany">Компания - не резидент</option>
+        </select>
+    </label>
+    <label>Идентификатор участника сообщения
+        <input id="participant-id-input" type="number" minlength="1" maxlength="15" pattern="[0-9]{1,15}">
+    </label>
+    <br>
+    <input id="form-request-button" type="button" title="Отправить" value="Отправить">
+</form>
+</div>
+
+<div id="submit-request" style="display: none">
+    <form>
+        <label>ID задания
+            <input id="request-id-input" pattern="[A-Za-z0-9]{32}">
+        </label>
+        <input id="submit-request-button" type="button" title="Отправить" value="Отправить">
+    </form>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<script type="text/javascript" src="/static/js/index.js"></script>
+{% endblock %}

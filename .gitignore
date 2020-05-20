@@ -1,5 +1,6 @@
 /.idea
 /__pycache__
+/handlers/__pycache__
 test.py
 *.png
 *.txt

@@ -1,4 +1,4 @@
-from json import load
+from json import load, loads
 from config import config_file, set_config
 
 import requests
@@ -33,10 +33,8 @@ auth = HTTPBasicAuth(LOGIN, PASSWORD)
 # requesting messages
 response = requests.get(MESSAGES_GUID_URL + 'begin=2019-07-01&end=2019-07-30&'+TYPES, auth=auth)
 print('response', response, '\n')
-# response will contain strings of messages' GUIDs or will be empty string
-raw_response_data = response.text.strip('[]')
-# splitting string by individual GUIDs and storing them in a list
-response_data = [item.strip('\"') for item in raw_response_data.split(',')]
+# response text is a JSON list
+response_data = loads(response.text)
 
 message_data = {}
 if response_data:
