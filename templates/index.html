@@ -14,39 +14,52 @@ fedresurs app
 
 
 {% block content %}
-<h3>Укажите критерии поиска:</h3>
 <div id="form-request" style="display: block">
+    <h3>Формирование задания по поиску</h3>
+    <h4>Укажите критерии поиска:</h4>
     <form>
-    <label>Дата начала периода
-        <input id="begin-input" type="date" required>
-    </label>
-    <label>Дата окончания периода
-        <input id="end-input" type="date">
-    </label>
-    <br>
-    <label>Тип участника сообщения
-        <select id="participant-type-input">
-            <option value="Company">Компания</option>
-            <option value="IndividualEntrepreneur">Индивидуальный предприниматель</option>
-            <option value="Person">Физическое лицо</option>
-            <option value="NonResidentCompany">Компания - не резидент</option>
-        </select>
-    </label>
-    <label>Идентификатор участника сообщения
-        <input id="participant-id-input" type="number" minlength="1" maxlength="15" pattern="[0-9]{1,15}">
-    </label>
-    <br>
-    <input id="form-request-button" type="button" title="Отправить" value="Отправить">
-</form>
+        <label>Дата начала периода
+            <input id="begin-input" type="date" required>
+        </label>
+        <label>Дата окончания периода
+            <input id="end-input" type="date">
+        </label>
+        <br>
+        <label>Тип участника сообщения
+            <select id="participant-type-input">
+                <option value="any">Любой</option>
+                <option value="Company">Компания</option>
+                <option value="IndividualEntrepreneur">Индивидуальный предприниматель</option>
+                <option value="Person">Физическое лицо</option>
+                <option value="NonResidentCompany">Компания - не резидент</option>
+            </select>
+        </label>
+        <label>Идентификатор участника сообщения
+            <input id="participant-id-input" type="number" minlength="1" maxlength="15" pattern="[0-9]{1,15}">
+        </label>
+        <br>
+        <input id="form-request-button" type="button" title="Отправить" value="Отправить">
+    </form>
+    <p>Результат - номер задания поиска</p>
 </div>
 
 <div id="submit-request" style="display: none">
+    <h3>Исполнение задания поиска</h3>
+    <h4>Укажите номер задания поиска</h4>
     <form>
         <label>ID задания
             <input id="request-id-input" pattern="[A-Za-z0-9]{32}">
         </label>
         <input id="submit-request-button" type="button" title="Отправить" value="Отправить">
     </form>
+    <p>Результат - найденные записи, подходящие под критерии поиска</p>
+</div>
+
+<div id="results" style="display: block">
+    <h3>Результат:</h3>
+    {% for item in data %}
+        <li>{{ item }}</li>
+    {% endfor %}
 </div>
 
 {% endblock %}

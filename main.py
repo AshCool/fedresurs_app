@@ -1,31 +1,38 @@
-from json import load, loads
-from config import config_file, set_config
+import configparser
+import re
+from json import loads
+from os.path import isfile
 
 import requests
 from requests.auth import HTTPBasicAuth
 
-import re
+from miscellaneous.config import config_file, set_config_default
 
-# loading config data
-# handling absence of config file
-try:
-    open(config_file, 'r')
-except FileNotFoundError:
-    set_config()
-finally:
-    # kinda awkward
-    with open(config_file, 'r') as config:
-        config_data = load(config)
-        # API URLs
-        # URL for getting GUID's of messages
-        MESSAGES_GUID_URL = config_data['messages_guid_url']
-        # URL for getting info from messages
-        MESSAGE_INFO_URL = config_data['message_info_url']
-        # login and password for test service authentication
-        LOGIN = config_data['login']
-        PASSWORD = config_data['password']
-        # all types of bankruptcy messages as a string of parameters
-        TYPES = config_data['messages_types']
+# loading config file
+config = configparser.ConfigParser()
+# if there's no config file, make one
+if not isfile(config_file):
+    set_config_default()
+config.read(config_file)
+
+# reading config file
+sections = config.sections()
+print(sections)
+
+# API
+api_data = config['API']
+# URL for getting GUID's of messages
+MESSAGES_GUID_URL = api_data['messages_guid_url']
+# URL for getting info from messages
+MESSAGE_INFO_URL = api_data['message_info_url']
+# login and password for test service authentication
+LOGIN = api_data['login']
+PASSWORD = api_data['password']
+# all types of bankruptcy messages as a string of parameters
+TYPES = api_data['messages_types']
+
+# DG connection
+db_data = config['postgresql']
 
 # storing authentication object
 auth = HTTPBasicAuth(LOGIN, PASSWORD)

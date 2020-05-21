@@ -15,10 +15,19 @@ $(document).ready(function() {
         var participantType = $('#participant-type-input').val();
         var participantId = $('#participant-id-input').val();
         $.post('/', {'begin': begin, 'end': end, 'participant_type': participantType, 'participant_id': participantId}, function(data) {
-            if (data === 'error') {
-                // TODO: this thing
-                alert('Incorrect something');
+            if (data === 'begin_date_error') {
+                alert('Необходимо ввести дату начала периода поиска');
             }
+            if (data === 'date_span_error') {
+                alert('Временной промежуток поиска не должен превышать 30 дней');
+            }
+            if (data === 'end_date_error') {
+                alert('Дата окончания поиска не может быть раньше даты начала');
+            }
+            if (data === 'participant_id_error') {
+                alert('Укажите идентификатор участника сообщения');
+            }
+            window.location.href = '/';
         });
     });
 

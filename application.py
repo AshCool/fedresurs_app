@@ -1,11 +1,11 @@
-from aiohttp import web
-
-import jinja2
 import aiohttp_jinja2
+import jinja2
+
+from aiohttp import web
+from os import environ
 
 from routes import routes
 
-from os import environ
 
 # initializing app
 app = web.Application()
