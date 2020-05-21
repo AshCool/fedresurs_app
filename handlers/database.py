@@ -8,7 +8,7 @@ from miscellaneous.log import log
 from miscellaneous.misc import isdate
 
 
-# return connection object
+# creates and returns connection object
 async def get_connection():
     # getting db connection settings from config file
     config = configparser.ConfigParser()
@@ -25,7 +25,7 @@ async def get_connection():
                                  password=db_data['password'], database=db_data['database'])
 
 
-# if others not provided, uses default settings for connecting to DB
+# function-wrapped for inserting data into table
 async def insert(table, **args):
     await log('Inserting arguments ' + str(args) + ' into table ' + str(table))
     await log('Opening connection to DB')

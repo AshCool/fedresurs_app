@@ -6,11 +6,7 @@ from asyncpg import Record
 
 from handlers.database import insert
 from miscellaneous.log import log
-
-
-def redirect(request, route):
-    url = request.app.router[route].url_for()
-    raise web.HTTPFound(url)
+from miscellaneous.misc import redirect
 
 # class for / view methods
 class Index(web.View):

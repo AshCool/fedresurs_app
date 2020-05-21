@@ -50,7 +50,6 @@ if response_data:
         for item in response_data[i:i+8]:
             response = requests.get(MESSAGE_INFO_URL + item, auth=auth)
             if response.status_code != 200:
-                # TODO: logging
                 print('something went wrong')
             else:
                 try:

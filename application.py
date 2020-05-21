@@ -19,7 +19,6 @@ app.add_routes([web.static('/static', 'static')])
 
 PORT = environ.get('PORT', 5000)
 
-# TODO: logging
 print('Starting app...')
 web.run_app(app, port=PORT)
 print('Shutting down...')
