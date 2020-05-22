@@ -26,6 +26,10 @@ config['log_file'] = {
     'file': 'log.txt'
 }
 
+config['results_dir'] = {
+    'dir': 'request_results'
+}
+
 # config file
 config_file = 'configs/config.ini'
 

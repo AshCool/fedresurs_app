@@ -1,0 +1,41 @@
+2020-05-22 21:03:24.275627: Got request with id=15
+2020-05-22 21:03:24.285627: Selecting data from table request with id 15
+2020-05-22 21:03:24.295627: Opening connection to DB
+2020-05-22 21:03:24.505627: Opened DB connection
+2020-05-22 21:03:24.605628: Closing DB connection
+2020-05-22 21:03:24.645628: DB connection is closed
+2020-05-22 21:03:24.645628: Entry successfully selected
+2020-05-22 21:03:24.645628: Requested parameters: ['2020-03-01', '2020-03-30', 'any', '']
+2020-05-22 21:03:24.655627: Making request to API...
+2020-05-22 21:03:26.335630: Request successfully made
+2020-05-22 21:03:26.335630: Results are saved to request_results/757f446a85a3ef036b4b8ecee3e47b3eb8b8d3e03f1247fb40eedf4d.json
+2020-05-22 21:07:20.083959: Got request with following parameters: begin_date=2020-05-01, end_date=2020-05-31, participant_type=IndividualEntrepreneur, participant_id=242
+2020-05-22 21:07:20.083959: Inserting arguments {'begin_date': '2020-05-01', 'end_date': '2020-05-31', 'participant_type': 'IndividualEntrepreneur', 'participant_id': '242'} into table request
+2020-05-22 21:07:20.093959: Opening connection to DB
+2020-05-22 21:07:20.423959: Opened DB connection
+2020-05-22 21:07:20.523959: Closing DB connection
+2020-05-22 21:07:20.573959: DB connection is closed
+2020-05-22 21:07:20.573959: Entry successfully inserted
+2020-05-22 21:07:20.573959: Request id=16
+2020-05-22 21:07:26.314968: Got request with id=16
+2020-05-22 21:07:26.324968: Selecting data from table request with id 16
+2020-05-22 21:07:26.324968: Opening connection to DB
+2020-05-22 21:07:26.464968: Opened DB connection
+2020-05-22 21:07:26.854968: Closing DB connection
+2020-05-22 21:07:26.894968: DB connection is closed
+2020-05-22 21:07:26.904969: Entry successfully selected
+2020-05-22 21:07:26.904969: Requested parameters: ['2020-05-01', '2020-05-31', 'IndividualEntrepreneur', '242']
+2020-05-22 21:07:26.904969: Making request to API...
+2020-05-22 21:07:27.064969: Request successfully made
+2020-05-22 21:07:27.074969: Results are saved to request_results/5cdd15a873608087be07a41b7f1a04e96d3a66fe7a9b0faac71f8d05.json
+2020-05-22 21:12:47.644706: Got request with id=16
+2020-05-22 21:12:47.654706: Selecting data from table request with id 16
+2020-05-22 21:12:47.654706: Opening connection to DB
+2020-05-22 21:12:47.874706: Opened DB connection
+2020-05-22 21:12:47.974706: Closing DB connection
+2020-05-22 21:12:48.024706: DB connection is closed
+2020-05-22 21:12:48.024706: Entry successfully selected
+2020-05-22 21:12:48.034706: Requested parameters: ['2020-05-01', '2020-05-31', 'IndividualEntrepreneur', '242']
+2020-05-22 21:12:48.034706: Making request to API...
+2020-05-22 21:12:48.124707: Request successfully made
+2020-05-22 21:12:48.134707: Got no messages

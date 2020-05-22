@@ -1,5 +1,5 @@
 /.idea
+/request_results/*
 *__pycache__
 test.py
 *.png
-*.txt

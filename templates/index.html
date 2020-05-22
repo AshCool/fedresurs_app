@@ -35,7 +35,7 @@ fedresurs app
             </select>
         </label>
         <label>Идентификатор участника сообщения
-            <input id="participant-id-input" type="number" minlength="1" maxlength="15" pattern="[0-9]{1,15}">
+            <input id="participant-id-input" type="number">
         </label>
         <br>
         <input id="form-request-button" type="button" title="Отправить" value="Отправить">
@@ -48,7 +48,7 @@ fedresurs app
     <h4>Укажите номер задания поиска</h4>
     <form>
         <label>ID задания
-            <input id="request-id-input" pattern="[A-Za-z0-9]{32}">
+            <input id="request-id-input">
         </label>
         <input id="submit-request-button" type="button" title="Отправить" value="Отправить">
     </form>
@@ -57,9 +57,16 @@ fedresurs app
 
 <div id="results" style="display: block">
     <h3>Результат:</h3>
-    {% for item in data %}
-        <li>{{ item }}</li>
-    {% endfor %}
+    {%if type == 'request_id'%}
+        <li>{{ data }}</li>
+    {%elif type == 'messages_data'%}
+        {%for item in data%}
+            <li>{{ item  }}</li>
+            <li>{{ data[item] }}</li>
+        {%endfor%}
+    {%elif type =='empty_messages_data'%}
+        <li>Нет сообщений, подходящих по критериям задания</li>
+    {%endif%}
 </div>
 
 {% endblock %}
