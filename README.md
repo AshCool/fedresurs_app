@@ -3,4 +3,4 @@ fedresurs_app - веб-приложение, реализующее API fedresur
 Для хранения промежуточных данных используется СУБД PostgreSQL.  
 Версия интерпретатора Python указана в файле runtime.txt.  
 Необходимые для работы библиотеки и их версии указаны в файле requirements.txt.  
-Ссылка на деплой на Heroku - [https://fedresurs-app.herokuapp.com/]  
+Ссылка на деплой на Heroku - (https://fedresurs-app.herokuapp.com/)  
