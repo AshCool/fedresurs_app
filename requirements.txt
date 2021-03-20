@@ -4,7 +4,7 @@ psycopg2==2.8.5
 asyncpg==0.20.1
 async-timeout==3.0.1
 cffi
-jinja2==2.11.1
+jinja2==2.11.3
 six
 configparser==5.0.0
 requests
